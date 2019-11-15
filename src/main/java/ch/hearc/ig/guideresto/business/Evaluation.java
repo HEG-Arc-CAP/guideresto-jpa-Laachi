@@ -1,10 +1,14 @@
 package ch.hearc.ig.guideresto.business;
 
+import javax.persistence.*;
 import java.util.Date;
 
+
 public abstract class Evaluation {
-    
+
+
     private Integer id;
+
     private Date visitDate;
     private Restaurant restaurant;
 
