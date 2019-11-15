@@ -1,13 +1,31 @@
 package ch.hearc.ig.guideresto.business;
 
+import org.hibernate.annotations.Immutable;
+
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name ="City")
 public class City {
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    generator ="SEQ_CITY")
+    @SequenceGenerator(name="SEQ_CITY",
+                        sequenceName ="seq_VILLES",
+                        initialValue =1,
+                        allocationSize = 1)
+    @Column(name="numero")
     private Integer id;
+
+    @Column(name="codePostale",nullable = false)
     private String zipCode;
+
+    @Column(name="nom_ville", nullable = false, length = 30)
     private String cityName;
+
     private Set<Restaurant> restaurants;
 
     public City() {
