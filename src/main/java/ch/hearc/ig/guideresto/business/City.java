@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name ="City")
+@Table(name ="villes")
 public class City {
 
     @Id
